@@ -1,0 +1,595 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+
+/* Imports */
+@import
+url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display:400,600%22");
+
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.0;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+/*  ABOVE IS BOILERPLATE
+    MY CODE STARTS HERE... */
+
+body {
+  font-family: "Roboto Condensed","Georgia","Times","Times New Roman","serif";
+}
+
+/* spacing */
+
+table {
+  table-layout: fixed;
+  border-collapse: collapsed;
+  border: 3px solid black;
+}
+
+thead th:nth-child(1) {
+  width: 30%;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+}
+
+th, td {
+  padding: 20px;
+}
+
+/* typography */
+
+html {
+  font-family: 'helvetica neue', helvetica, arial, sans-serif;
+}
+
+thead th, tfoot th {
+  font-family: 'Rock Salt', cursive;
+}
+
+th {
+  letter-spacing: 2px;
+}
+
+td {
+  letter-spacing: 1px;
+}
+
+tbody td {
+  text-align: center;
+}
+
+tfoot th {
+  text-align: right;
+}
+
+/* graphics and colors */
+
+
+thead, tfoot {
+  background-color: #3340ff3d;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+}
+
+thead th, tfoot th, tfoot td {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+  border: 3px solid black;
+}
+
+
+tbody tr:nth-child(odd) {
+  background-color: #7ab3e6a8;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #aed1fb1c;
+}
+
+
+table {
+  background-color: #3340ff3d;;
+}
+
+/* caption */
+
+caption {
+  font-family: 'Rock Salt', cursive;
+  padding: 20px;
+  font-style: italic;
+  caption-side: bottom;
+  color: #666;
+  text-align: right;
+  letter-spacing: 1px;
+}
+
+
+h1 {
+  color: black;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+br {
+  display: block;
+  margin: 10px;
+}
+
+label{
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  top: 10px;
+  left-padding: 3%;
+}
+
+
+h1 {
+  font-size: 44px;
+  color: #030303;
+  margin-top: 10px;
+}
+
+input{
+  padding:12px;
+  border:0;
+  box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+  border-radius:10px;
+  width: 100%;
+  clear: both;
+}
+
+select {
+  width: 35%;
+  padding:10px;
+  border-radius:12px;
+}
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 10px;
+  margin: 30px;
+  border: none;
+  background-color: darkred;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  width: 13em;
+}
+
+button:hover {
+  background-color: red;
+}
+
+
+nav {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  background-color: #333;
+  overflow: hidden;
+  width: 100%;
+  text-align:center;
+}
+
+nav ul{
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  /* This allow us to arrange list items in a row, without using float */
+  display: inline-block;
+  list-style-type: none;
+}
+
+/* Create a style for the first level items */
+nav > ul > li > a {
+  color: #ffffff;
+  background-color: #333;
+  display: block;
+  line-height: 2em;
+  padding: 0.5em 0.5em;
+  text-decoration: none;
+}
+
+nav > ul > li > a:hover {
+  background-color: #474646;
+}
+
+
+
+
+LABEL.indented-checkbox-text
+{
+  color: black;
+  margin-left: 2em;
+  display: block;
+  position: relative;
+  margin-top: -1.5em;
+  line-height: 1.4em;
+  top: 5px;
+}
+
+.header {
+  position: center;
+}
+
+.bg {
+  background-image: url(../assets/background1.png);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgPHP {
+  background-image: url(../assets/marble.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.center {
+  margin: auto;
+  width: 80%;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+
+
+.centerwborder {
+  margin: auto;
+  margin-top: 5%;
+  height: 50%;
+  width: 60%;
+  border: 8px solid black;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.centerwborderPHP {
+  height: 50%;
+  width: 100%;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.wrapperRight {
+  text-align: right;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.centernoborder {
+  margin: auto;
+  width: 54%;
+  padding: 10px;
+  text-align: center;
+}
+
+/* a tag, editing the hyperlink of the nav*/
+#nav a {
+  text-decoration: none;
+}
+
+#nav {
+  /*background-image: url("assets/DuskMountains.jpg");*/
+  text-decoration: none;
+}
+
+#emailCheckbox {
+  width: 1%;
+}
+
+#labelTransaction {
+  padding-left: 4%;
+}
+
+#hideRequired {
+  display: none;
+}
+
+.imgborder {
+  border: 2px solid black;
+}
+
+.titleNP {
+  font-size: 50pt;
+  color: darkblue;
+}
+
+.width20 {
+  width: 5%;
+}
+
+.required {
+  color: red;
+  padding-left: 50px;
+  font-weight: 800;
+}
+
+.centerV2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#clientDBButton {
+  margin-left: 1.2em;
+}
+
+
+

@@ -1,0 +1,219 @@
+@import
+url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display:400,600%22");
+
+
+body {
+    font-family: "Roboto Condensed","Georgia","Times","Times New Roman","serif";
+    margin: 1.0em;
+    padding: 1.0em;
+}
+
+
+
+tr {
+    width: 100%;
+}
+
+td {
+    width: 30%;
+}
+
+h1 {
+    color: black;
+    margin-left: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+br {
+    display: block;
+    margin: 10px;
+}
+
+label{
+    font-weight: bold;
+    font-size: 18px;
+    position: relative;
+    left-padding: 3%;
+}
+
+
+h1 {
+    font-size: 60px;
+    color: #030303;
+}
+
+input.userpass{
+    padding:12px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    width: 50%;
+    clear: both;
+}
+
+input.chatbox {
+    height: 100px;
+}
+
+select {
+    width: 35%;
+    padding:10px;
+    border-radius:12px;
+}
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 10px;
+    border: none;
+    background-color: darkred;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 15%;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;
+    text-align:center;
+}
+
+nav ul{
+    margin: 0;
+    padding: 0;
+}
+nav ul li {
+    /* This allow us to arrange list items in a row, without using float */
+    display: inline-block;
+    list-style-type: none;
+}
+
+/* Create a style for the first level items */
+nav > ul > li > a {
+    color: #ffffff;
+    background-color: #333;
+    display: block;
+    line-height: 2em;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+}
+
+nav > ul > li > a:hover {
+    background-color: #474646;
+}
+
+
+
+
+
+LABEL.indented-checkbox-text
+{
+    color: black;
+    margin-left: 2em;
+    display: block;
+    position: relative;
+    margin-top: -1.5em;
+    line-height: 1.4em;
+    top: 5px;
+}
+
+.header {
+    position: center;
+}
+
+.bg {
+    background-image: url(../assets/background1.png);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center {
+    margin: auto;
+    width: 80%;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+
+
+.centerwborder {
+    margin: auto;
+    margin-top: 5%;
+    height: 50%;
+    width: 40%;
+    border: 8px solid black;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.wrapper {
+    text-align: center;
+}
+
+.wrapperRight {
+    text-align: right;
+    padding-right: 40px;
+    padding-bottom: 20px;
+}
+
+
+.centernoborder {
+    margin: auto;
+    width: 54%;
+    padding: 10px;
+    text-align: center;
+}
+
+/* a tag, editing the hyperlink of the nav*/
+#nav a {
+    text-decoration: none;
+}
+
+#nav {
+    /*background-image: url("assets/DuskMountains.jpg");*/
+    text-decoration: none;
+}
+
+#emailCheckbox {
+    width: 1%;
+}
+
+#labelTransaction {
+    padding-left: 4%;
+}
+
+#hideRequired {
+    display: none;
+}
+
+
+
+.imgborder {
+    border: 2px solid black;
+}
+
+.titleNP {
+    font-size: 50pt;
+    color: darkblue;
+}
+
+.width20 {
+    width: 5%;
+}
+
+.required {
+    color: red;
+    padding-left: 50px;
+    font-weight: 800;
+}
+
