@@ -8,7 +8,9 @@ body {
     padding: 1.0em;
 }
 
-
+span#error{
+    color:darkred;
+}
 
 tr {
     width: 100%;
@@ -110,7 +112,10 @@ nav > ul > li > a:hover {
     background-color: #474646;
 }
 
-
+textarea#chatBox2 {
+    color: black;
+    font-weight: bold;
+}
 
 
 

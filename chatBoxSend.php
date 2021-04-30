@@ -1,53 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table, td, th {
-            border: 1px solid black;
-            padding: 5px;
-        }
-
-        th {text-align: left;}
-    </style>
-</head>
-<body>
-
 <?php
-$q = intval($_GET['q']);
 
-$con = mysqli_connect('localhost','peter','abc123','my_db');
-if (!$con) {
-    die('Could not connect: ' . mysqli_error($con));
+include('connect.php'); // Open connection the DB
+
+$name = $_POST['username_data'];                // How to collect data supplied by the user via Ajax to PHP
+$password = $_POST['password_data'];            // How to collect data supplied by the user via Ajax to PHP
+$chat_box_data = $_POST['chatbox1Value_data'];  // How to collect data supplied by the user via Ajax to PHP
+
+//SQL query to select all the books with the letter supplied by the user.
+$sql = "SELECT chat_content FROM `chat_table` WHERE name = '$name' AND password = '$password'";
+    //"SELECT chat_content FROM `chat_table` WHERE name = 'Cristen' AND password = 'PFdhX$2A'";
+
+$result = mysqli_query($dbc, $sql);
+
+if (mysqli_num_rows($result) > 0) {
+    // Then the user and password match. We can update the DB chat_content row for this user.
+    //echo '<script>alert("Client Already Has an Account")</script>';
+    $updateChat = "UPDATE `mkc4`.`chat_table` SET `chat_content` = '$chat_box_data' WHERE `chat_table`.`name` = '$name'";
+    mysqli_query($dbc, $updateChat);
+
+    echo '';
+
+    //echo $chat_box_data;
+
+} else {
+    // Not in the DB. Output that it was an error.
+    //echo $name . $password . $chat_box_data;
+    echo '"Username or Password is incorrect."';
 }
-
-mysqli_select_db($con,"ajax_demo");
-$sql="SELECT * FROM user WHERE id = '".$q."'";
-$result = mysqli_query($con,$sql);
-
-echo "<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-<th>Age</th>
-<th>Hometown</th>
-<th>Job</th>
-</tr>";
-while($row = mysqli_fetch_array($result)) {
-    echo "<tr>";
-    echo "<td>" . $row['FirstName'] . "</td>";
-    echo "<td>" . $row['LastName'] . "</td>";
-    echo "<td>" . $row['Age'] . "</td>";
-    echo "<td>" . $row['Hometown'] . "</td>";
-    echo "<td>" . $row['Job'] . "</td>";
-    echo "</tr>";
-}
-echo "</table>";
-mysqli_close($con);
 ?>
-</body>
-</html> 
